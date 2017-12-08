@@ -1,42 +1,24 @@
-var nbr = 0; //array of objects here
-$().ready(function() {
 
-	console.log("it worked.");
-	$("body").css("margin","10px");
-	
-	$("#inc").click(addNumber);
-			
-	$("#dec").click(subtractNumber);
-	loadTable();
+$().ready(function() {
+	bowlGame();
 });	
-function addNumber(){
-	nbr++;
-	loadTable();
+
+function randNumber(){
+	return Math.floor(Math.random()*31);
 }
 
-function subtractNumber(){
-	nbr--;
-	loadTable();
-} 
+function bowlGame(){
+	scores = [];
+	$("#thegame").empty;
+	var total = 0;
+	for(var idx =0; idx < 10; idx++){
+		scores[idx] = randNumber();
+		$("#thegame").append("<td>" + scores[idx] + "</td>");
+		console.log("frame", idx+1,"score is", scores[idx]);
+		total += scores[idx];
+	}
+	$("#thegame").append("<td>" + total + "</td>");
+	console.log("total score is", total);
 
-function loadTable(){
-	var nbrCtrl = $("#nbr");
-	nbrCtrl.val(nbr);
-	nbrCtrl.css("color","black");
-	nbrCtrl.css("font-style","normal");
-	nbrCtrl.css("font-weight","normal");
-
-	if (nbr == 0){
-		return;
-	}
-	if (nbr % 2 ==0){
-		nbrCtrl.css("color","red");
-	}
-	if (nbr % 3 ==0){
-		nbrCtrl.css("font-style","italic");
-	}
-	if (nbr % 7 ==0){
-		nbrCtrl.css("font-weight","normal");
-	}
 }
 

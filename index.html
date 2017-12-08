@@ -2,26 +2,29 @@
 <html>
 <head>
 	<title></title>
+	<link href="style.css" rel="stylesheet" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src= "js/index.js" type="text/javascript"></script>
 </head>
 <body>
 	<div>
-		<div id = "left">
-			<button id = "dec" class = "btn btn-danger">-</button>
-		</div>
-		<div id = "center">
-			<input id = "nbr" type ="text" size="5">
-		</div>
-		<div id= "right">
-			<button id = "inc" class = "btn btn-success">+</button>
-		</div>
+		<table class = "table">
+			<tr>
+				<td>Frame1</td>
+				<td>Frame2</td>
+				<td>Frame3</td>
+				<td>Frame4</td>
+				<td>Frame5</td>
+				<td>Frame6</td>
+				<td>Frame7</td>
+				<td>Frame8</td>
+				<td>Frame9</td>
+				<td>Frame10</td>
+				<td>Total</td>
+			</tr>
+			<tr id= "thegame"></tr>
+		</table>
 	</div>
-		<form name="f1">
-			<input type='button' name='add' onclick='javascript: document.getElementById("qty").value++;' value='+'/>
-			<input type='text' name='qty' id='qty' />
-			<input type='button' name='subtract' onclick='javascript: document.getElementById("qty").value--;' value='-'/>
-		</form>
 </body>
 </html>
